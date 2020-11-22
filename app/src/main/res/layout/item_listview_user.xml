@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_item_photo"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="16dp"
+        tools:src="@android:color/darker_gray"/>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/img_item_photo"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_item_name"
+            android:textSize="16sp"
+            android:layout_marginBottom="6dp"
+            android:textStyle="bold"
+            tools:text="@string/users_name"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_item_uname"
+                android:ellipsize="end"
+                android:layout_weight="1"
+                android:layout_marginBottom="8dp"
+                tools:text="@string/users_username"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_item_repo"
+                android:ellipsize="end"
+                android:layout_weight="1.3"
+                android:layout_marginBottom="8dp"
+                tools:text="@string/users_repo"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
