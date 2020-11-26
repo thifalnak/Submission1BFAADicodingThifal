@@ -1,5 +1,6 @@
 package com.belajar.githubuserlist
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,6 +25,7 @@ class ListUserAdapter(private val listUser: ArrayList<Users>) : RecyclerView.Ada
         return listUser.size
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ListUserAdapter.ListViewHolder, position: Int) {
         val user = listUser[position]
 

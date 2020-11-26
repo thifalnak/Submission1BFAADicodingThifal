@@ -2,13 +2,10 @@
     <string name="app_name">GithubUser List</string>
     <string name="users_name">Nama User</string>
     <string name="users_username">Username</string>
-    <string name="users_detail">Detail</string>
-    <string name="users_comp">Perusahaan</string>
-    <string name="users_followers">00</string>
-    <string name="users_following">00</string>
     <string name="teks_followers">Followers</string>
     <string name="teks_following">Following</string>
     <string name="users_repo">000</string>
+    <string name="teks_repo">Repo</string>
 
     <string-array name="username">
         <item>JakeWharton</item>

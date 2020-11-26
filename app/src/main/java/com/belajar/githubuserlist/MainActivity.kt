@@ -1,9 +1,9 @@
 package com.belajar.githubuserlist
 
+import android.content.Intent
 import android.content.res.TypedArray
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -43,7 +43,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showSelectedUser(user: Users) {
-        Toast.makeText(this, "Kamu memilih " + user.name, Toast.LENGTH_SHORT).show()
+        val userData = Users("", "", "", "", "", "", "",0)
+        userData.username = user.username
+        userData.name = user.name
+        userData.location = user.location
+        userData.repository = user.repository
+        userData.company = user.company
+        userData.followers = user.followers
+        userData.following = user.following
+        userData.avatar = user.avatar
+
+        val intent = Intent(this@MainActivity, UserDetailActivity::class.java)
+        intent.putExtra(UserDetailActivity.EXTRA_USER, userData)
+        this@MainActivity.startActivity(intent)
     }
     private fun prepare() {
         dataName = resources.getStringArray(R.array.name)
@@ -61,11 +73,11 @@ class MainActivity : AppCompatActivity() {
             val user = Users(
                     name = dataName[position],
                     username = dataUsername[position],
-                    repository = dataRepo[position].toInt(),
+                    repository = dataRepo[position],
                     avatar = dataAva.getResourceId(position, -1),
                     company = dataComp[position],
-                    followers = dataFollowers[position].toInt(),
-                    following = dataFollowing[position].toInt(),
+                    followers = dataFollowers[position],
+                    following = dataFollowing[position],
                     location = dataLocation[position]
             )
             users.add(user)
