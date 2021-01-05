@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/act_change_lang"
+        android:title="@string/change_language"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/act_change_theme"
+        android:title="@string/choose_theme_text"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_search_white_18dp"
+        android:title="@string/search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="collapseActionView|ifRoom" />
+
+</menu>

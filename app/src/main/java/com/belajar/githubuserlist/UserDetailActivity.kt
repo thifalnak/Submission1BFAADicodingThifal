@@ -1,50 +1,45 @@
 package com.belajar.githubuserlist
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import de.hdodenhof.circleimageview.CircleImageView
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.activity_user_detail.*
 
 
 class UserDetailActivity : AppCompatActivity() {
 
     companion object {
-        var EXTRA_USER = "0"
+        const val EXTRA_USER = "0"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_detail)
 
-        //Inisiasi Objek yang berubah valuenya di setiap user
-        val avaDetail : CircleImageView = findViewById(R.id.avatar_detail)
-        val nameDetail : TextView = findViewById(R.id.nama_detail)
-        val usernameDetail : TextView = findViewById(R.id.username_detail)
-        val compDetail : TextView = findViewById(R.id.comp_detail)
-        val locDetail : TextView = findViewById(R.id.loc_detail)
-        val followingNDetail : TextView = findViewById(R.id.nfollowing_detail)
-        val followersNDetail : TextView = findViewById(R.id.nfollowers_detail)
-        val repoNDetail : TextView = findViewById(R.id.nrepo_detail)
-
-        //Inisiasi Objek yang tidak berubah valuenya
-        val followersTDetail : TextView = findViewById(R.id.tfollowers_detail)
-        val followingTDetail : TextView = findViewById(R.id.tfollowing_detail)
-        val repoTDetail : TextView = findViewById(R.id.trepo_detail)
-
-        followersTDetail.text = getString(R.string.teks_followers)
-        followingTDetail.text = getString(R.string.teks_following)
-        repoTDetail.text = getString(R.string.teks_repo)
+        tfollowers_detail.text = getString(R.string.teks_followers)
+        tfollowing_detail.text = getString(R.string.teks_following)
+        trepo_detail.text = getString(R.string.teks_repo)
 
         val getUser : Users? = intent.getParcelableExtra(EXTRA_USER)
 
-        avaDetail.setImageResource(getUser?.avatar!!)
-        nameDetail.text = getUser.name
-        usernameDetail.text = getUser.username
-        compDetail.text = getUser.company
-        locDetail.text = getUser.location
-        followersNDetail.text = getUser.followers.toString()
-        followingNDetail.text = getUser.following.toString()
-        repoNDetail.text = getUser.repository.toString()
+        Glide.with(this)
+            .load(getUser?.avatar)
+            .into(avatar_detail)
+        nama_detail.text = getUser?.name
+        username_detail.text = getUser?.username
+        comp_detail.text = getUser?.company
+        loc_detail.text = getUser?.location
+        nfollowers_detail.text = getUser?.followers.toString()
+        nfollowing_detail.text = getUser?.following.toString()
+        nrepo_detail.text = getUser?.repository.toString()
+
+        viewPagerConfig()
+    }
+
+    private fun viewPagerConfig() {
+        val sectionsPagerAdapter = SectionPagerAdapter(this, supportFragmentManager)
+        view_pager.adapter = sectionsPagerAdapter
+        tabs.setupWithViewPager(view_pager)
     }
 
 

@@ -1,6 +1,5 @@
 package com.belajar.githubuserlist
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +24,6 @@ class ListUserAdapter(private val listUser: ArrayList<Users>) : RecyclerView.Ada
         return listUser.size
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ListUserAdapter.ListViewHolder, position: Int) {
         val user = listUser[position]
 
@@ -36,14 +34,12 @@ class ListUserAdapter(private val listUser: ArrayList<Users>) : RecyclerView.Ada
 
         holder.tvName.text = user.name
         holder.tvUname.text = user.username
-        holder.tvRepo.text = user.repository.toString() + " Repo"
         holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listUser[holder.adapterPosition]) }
     }
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
         var tvUname: TextView = itemView.findViewById(R.id.tv_item_uname)
-        var tvRepo: TextView = itemView.findViewById(R.id.tv_item_repo)
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
     }
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="teks_followers">Followers</string>
+    <string name="teks_following">Following</string>
+    <string name="search">Find User</string>
+    <string name="change_language">Change Language</string>
+    <string name="choose_theme_text">Choose Theme</string>
+    <string name="fav_user">Favorited User</string>
+</resources>

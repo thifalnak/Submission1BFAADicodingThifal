@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="teks_following" translatable="false">Mengikuti</string>
+    <string name="search">Cari User</string>
+    <string name="change_language">Pilih Bahasa</string>
+    <string name="choose_theme_text">Pilih Tema</string>
+    <string name="teks_followers">Pengikut</string>
+    <string name="fav_user">Pengguna Favorit</string>
+</resources>

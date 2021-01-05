@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,45 +12,32 @@
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_marginEnd="16dp"
-        tools:src="@android:color/darker_gray"/>
+        tools:src="@android:color/darker_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <LinearLayout
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/img_item_photo"
-        android:orientation="vertical">
+        android:id="@+id/tv_item_name"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"
+        android:textStyle="bold"
+        tools:text="@string/users_name"
+        app:layout_constraintTop_toTopOf="@id/img_item_photo"
+        app:layout_constraintLeft_toRightOf="@id/img_item_photo"
+        android:layout_marginStart="16dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_item_name"
-            android:textSize="16sp"
-            android:layout_marginBottom="6dp"
-            android:textStyle="bold"
-            tools:text="@string/users_name"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_item_uname"
+        android:ellipsize="end"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        tools:text="@string/users_username"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_name"
+        app:layout_constraintLeft_toLeftOf="@id/tv_item_name"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_item_uname"
-                android:ellipsize="end"
-                android:layout_weight="1"
-                android:layout_marginBottom="8dp"
-                tools:text="@string/users_username"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_item_repo"
-                android:ellipsize="end"
-                android:layout_weight="1.3"
-                android:layout_marginBottom="8dp"
-                tools:text="@string/users_repo"/>
-        </LinearLayout>
-    </LinearLayout>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,17 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserDetailActivity"
-    android:padding="16dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".UserDetailActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/avatar_detail"
-        android:layout_height="100dp"
-        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_width="75dp"
         tools:src="@android:color/darker_gray"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"/>
 
     <TextView
         android:id="@+id/nama_detail"
@@ -22,7 +22,7 @@
         tools:text="NAMALENGKAP"
         android:layout_below="@id/avatar_detail"
         android:layout_centerHorizontal="true"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"/>
 
     <TextView
@@ -32,7 +32,7 @@
         tools:text="username"
         android:layout_below="@id/nama_detail"
         android:layout_centerHorizontal="true"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         android:layout_marginBottom="8dp"/>
 
@@ -43,7 +43,7 @@
         tools:text="Google Inc."
         android:layout_below="@id/username_detail"
         android:layout_centerHorizontal="true"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginBottom="8dp"/>
 
@@ -54,7 +54,7 @@
         tools:text="Bandung, West Java, Indonesia"
         android:layout_below="@id/comp_detail"
         android:layout_centerHorizontal="true"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginBottom="16dp"/>
 
@@ -90,6 +90,7 @@
             android:textAlignment="center"/>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/keterangan_angka"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -119,4 +120,20 @@
             android:textSize="15sp"
             android:textAlignment="center"/>
     </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_below="@id/keterangan_angka"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:tabSelectedTextColor="@color/white"
+        app:tabIndicatorColor="@color/white"
+        android:background="?attr/colorPrimary"/>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_marginTop="8dp"
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tabs"/>
 </RelativeLayout>
